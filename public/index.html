@@ -123,9 +123,9 @@
 
           $.ajax({
             type: "POST",
-           // url: `https://live-users-registration.onrender.com/api/users/${formData.emailId}`,
+           url: `https://socket-io-op.onrender.com/api/users/${formData.emailId}`,
 
-            url: `http://localhost:3000/api/users/${formData.emailId}`,
+            //url: `http://localhost:3000/api/users/${formData.emailId}`,
 
             data: JSON.stringify(formData),
             contentType: "application/json",
