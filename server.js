@@ -15,7 +15,7 @@ const io = socketIO(server);
 connectDB();
 app.use(
   cors({
-    origin: ["https://socket-io-op.onrender.com","http://localhost:3000/api/users"]
+    origin: ["https://socket-task.onrender.com","http://localhost:3000/api/users"]
   })
 );
 
@@ -80,7 +80,7 @@ app.get("/api/users/:emailId", async (req, res) => {
 
     // Validate that the emailId follows the correct pattern for a Gmail address
     //const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-     const emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailPattern.test(emailId)) {
       return res.status(400).send({ message: "Invalid email address" });
     }
