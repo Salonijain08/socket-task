@@ -49,9 +49,7 @@
         placeholder="Email"
         required
         autocomplete="off"
-<!--         const emailPattern = /[a-zA-Z0-9._%+-]+@gmail\.com$/;
-        title="Email must be a valid Gmail address (e.g., user@gmail.com)" -->
-       pattern= "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        pattern= "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
         title="Email must be a valid email address (e.g., user@example.com)"
         />
       <input
@@ -116,8 +114,9 @@
             loginId: $('input[name="loginId"]').val(),
             password: $('input[name="password"]').val(),
           };
-           const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-         // const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+           // const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+          const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          
                 if (!emailPattern.test(formData.emailId)) {
                     alert("Please enter a valid Gmail address (e.g., user@gmail.com).");
                     return;
