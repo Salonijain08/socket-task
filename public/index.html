@@ -49,8 +49,9 @@
         placeholder="Email"
         required
         autocomplete="off"
-        const emailPattern = /[a-zA-Z0-9._%+-]+@gmail\.com$/;
-        title="Email must be a valid Gmail address (e.g., user@gmail.com)"
+      
+        pattern= "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        title="Email must be a valid email address (e.g., user@example.com)"
         />
       <input
         type="text"
@@ -114,8 +115,8 @@
             loginId: $('input[name="loginId"]').val(),
             password: $('input[name="password"]').val(),
           };
-          // const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-          const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+           const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+         // const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
                 if (!emailPattern.test(formData.emailId)) {
                     alert("Please enter a valid Gmail address (e.g., user@gmail.com).");
                     return;
@@ -123,9 +124,9 @@
 
           $.ajax({
             type: "POST",
-           url: `https://socket-io-op.onrender.com/api/users/${formData.emailId}`,
+           //url: `https://socket-io-op.onrender.com/api/users/${formData.emailId}`,
 
-            //url: `http://localhost:3000/api/users/${formData.emailId}`,
+            url: `http://localhost:3000/api/users/${formData.emailId}`,
 
             data: JSON.stringify(formData),
             contentType: "application/json",
